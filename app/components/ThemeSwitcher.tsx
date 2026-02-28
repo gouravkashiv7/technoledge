@@ -34,8 +34,8 @@ const THEMES = [
     id: "dark",
     label: "Dark",
     icon: "dark_mode",
-    swatch: "#000000",
-    accent: "#00d2aa",
+    swatch: "#18181b",
+    accent: "#6366f1",
     isDark: true,
   },
   {
