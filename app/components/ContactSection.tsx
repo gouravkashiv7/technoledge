@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 import { SlideIn, FadeIn } from "./MotionWrappers";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card } from "@/components/ui/card";
 
 export default function ContactSection() {
   return (
@@ -29,7 +33,7 @@ export default function ContactSection() {
                   whileHover={{ x: 5 }}
                   className="flex items-center gap-4 group cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-text-inverse transition-all duration-300">
                     <span className="material-icons-round">{item.icon}</span>
                   </div>
                   <span className="text-text-secondary group-hover:text-accent transition-colors duration-300">
@@ -43,59 +47,81 @@ export default function ContactSection() {
 
         {/* Contact form */}
         <SlideIn from="right" className="w-full md:w-1/2 perspective-1000">
-          <div className="glass-card p-8 rounded-3xl shadow-2xl animate-float border-t border-l border-white/50 relative">
-            <div className="absolute -right-4 top-10 w-2 h-20 bg-surface-alt rounded-full overflow-hidden">
+          <Card className="glass-card p-6 md:p-8 rounded-3xl shadow-2xl animate-float border-white/10 relative bg-surface/40 backdrop-blur-xl">
+            <div className="absolute -right-4 top-10 w-2 h-20 bg-surface-alt rounded-full overflow-hidden hidden md:block">
               <div className="w-full h-1/2 bg-accent animate-pulse"></div>
             </div>
             <form className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="first-name"
+                    className="text-sm font-medium text-text-secondary"
+                  >
                     First Name
                   </label>
-                  <input
-                    className="w-full rounded-lg bg-surface/50 border border-white/10 focus:ring-2 focus:ring-accent focus:border-transparent transition-shadow p-3"
-                    type="text"
+                  <Input
+                    id="first-name"
+                    placeholder="John"
+                    className="bg-surface/50 border-white/10 focus:ring-accent focus:border-accent transition-all duration-300 h-12"
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">
+                <div className="space-y-2">
+                  <label
+                    htmlFor="last-name"
+                    className="text-sm font-medium text-text-secondary"
+                  >
                     Last Name
                   </label>
-                  <input
-                    className="w-full rounded-lg bg-surface/50 border border-white/10 focus:ring-2 focus:ring-accent focus:border-transparent transition-shadow p-3"
-                    type="text"
+                  <Input
+                    id="last-name"
+                    placeholder="Doe"
+                    className="bg-surface/50 border-white/10 focus:ring-accent focus:border-accent transition-all duration-300 h-12"
                   />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-text-secondary mb-1">
+              <div className="space-y-2">
+                <label
+                  htmlFor="email"
+                  className="text-sm font-medium text-text-secondary"
+                >
                   Email Address
                 </label>
-                <input
-                  className="w-full rounded-lg bg-surface/50 border border-white/10 focus:ring-2 focus:ring-accent focus:border-transparent transition-shadow p-3"
+                <Input
+                  id="email"
                   type="email"
+                  placeholder="john@example.com"
+                  className="bg-surface/50 border-white/10 focus:ring-accent focus:border-accent transition-all duration-300 h-12"
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-text-secondary mb-1">
+              <div className="space-y-2">
+                <label
+                  htmlFor="message"
+                  className="text-sm font-medium text-text-secondary"
+                >
                   Message
                 </label>
-                <textarea
-                  className="w-full rounded-lg bg-surface/50 border border-white/10 focus:ring-2 focus:ring-accent focus:border-transparent transition-shadow p-3"
-                  rows={4}
-                ></textarea>
+                <Textarea
+                  id="message"
+                  placeholder="Tell us about your project..."
+                  className="bg-surface/50 border-white/10 focus:ring-accent focus:border-accent transition-all duration-300 min-h-30"
+                />
               </div>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-linear-to-r from-accent to-accent-dark text-white font-bold rounded-xl shadow-glow"
-                type="button"
+              <Button
+                size="lg"
+                className="w-full h-14 bg-accent hover:bg-accent-dark text-text-inverse font-bold rounded-xl shadow-glow transition-all duration-300 group"
               >
                 Send Message
-              </motion.button>
+                <motion.span
+                  className="ml-2 material-icons-round text-sm"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                  send
+                </motion.span>
+              </Button>
             </form>
-          </div>
+          </Card>
         </SlideIn>
       </div>
     </section>

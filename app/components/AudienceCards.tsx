@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "./MotionWrappers";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function AudienceCards() {
   const audiences = [
@@ -45,33 +47,54 @@ export default function AudienceCards() {
             Empowering Everyone
           </h2>
         </FadeIn>
-        <StaggerContainer stagger={0.2} className="grid md:grid-cols-3 gap-8">
+        <StaggerContainer
+          stagger={0.2}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
           {audiences.map((a) => (
             <StaggerItem key={a.title}>
               <motion.div
-                whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
+                whileHover={{ y: -10 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-linear-to-b from-surface to-surface-alt rounded-3xl p-8 border border-white/10 text-center relative overflow-hidden group"
+                className="h-full group"
               >
-                <div
-                  className={`absolute top-0 left-0 w-full h-2 ${a.borderColor}`}
-                ></div>
-                <div className="w-32 h-32 mx-auto mb-6 relative">
-                  <motion.div
-                    whileHover={{ scale: 1.15 }}
-                    className={`w-full h-full ${a.bgColor} rounded-full flex items-center justify-center`}
-                  >
-                    <span
-                      className={`material-icons-round text-6xl ${a.iconColor}`}
-                    >
-                      {a.icon}
-                    </span>
-                  </motion.div>
-                </div>
-                <h3 className="text-2xl font-bold text-text-primary mb-3">
-                  {a.title}
-                </h3>
-                <p className="text-text-secondary text-sm">{a.description}</p>
+                <Card className="h-full bg-surface/30 backdrop-blur-md rounded-3xl border-white/10 text-center relative overflow-hidden transition-all duration-500 hover:bg-surface/50 group-hover:shadow-glow">
+                  <div
+                    className={`absolute top-0 left-0 w-full h-1.5 ${a.borderColor}`}
+                  ></div>
+
+                  <CardHeader className="pt-12 pb-6">
+                    <div className="w-28 h-28 mx-auto relative group-hover:scale-110 transition-transform duration-500">
+                      <div
+                        className={`w-full h-full ${a.bgColor} rounded-full flex items-center justify-center relative overflow-hidden`}
+                      >
+                        <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <span
+                          className={`material-icons-round text-5xl ${a.iconColor}`}
+                        >
+                          {a.icon}
+                        </span>
+                      </div>
+                    </div>
+                    <CardTitle className="text-2xl font-bold text-text-primary mt-6">
+                      {a.title}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="px-8 pb-12">
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {a.description}
+                    </p>
+                    <div className="mt-8">
+                      <Badge
+                        variant="outline"
+                        className="border-accent/20 text-accent font-bold text-[10px] tracking-widest uppercase py-1 px-3"
+                      >
+                        View More
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             </StaggerItem>
           ))}

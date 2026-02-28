@@ -1,6 +1,8 @@
 "use client";
 
 import { ScaleIn } from "./MotionWrappers";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function FraudAlert() {
   return (
@@ -26,9 +28,19 @@ export default function FraudAlert() {
                   channels. Stay safe in the digital space.
                 </p>
               </div>
-              <button className="px-6 py-2 border border-white/10 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg text-sm font-medium transition-colors whitespace-nowrap">
+              <Button
+                variant="outline"
+                className="px-6 py-2 border-white/10 hover:bg-red-500/10 hover:text-red-500 dark:hover:bg-red-500/10 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap group"
+              >
                 Verify Source
-              </button>
+                <motion.span
+                  className="ml-2 material-icons-round text-sm"
+                  animate={{ rotate: [0, 15, -15, 0] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                >
+                  verified_user
+                </motion.span>
+              </Button>
             </div>
           </div>
         </ScaleIn>

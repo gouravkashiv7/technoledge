@@ -13,8 +13,9 @@ export default function Footer() {
               <span className="font-display font-bold text-2xl text-text-primary">
                 Technoledge
               </span>
-              <p className="text-sm mt-2">
-                © 2024 Technoledge India. All rights reserved.
+              <p className="text-text-muted text-sm mt-3 opacity-70">
+                &copy; {new Date().getFullYear()} Technoledge India. All rights
+                reserved. Lead with Excellence.
               </p>
             </div>
             <div className="flex space-x-6">
@@ -61,9 +62,10 @@ export default function Footer() {
                   whileHover={{
                     scale: 1.15,
                     backgroundColor: "var(--accent)",
-                    color: "#ffffff",
+                    color: "white",
+                    borderColor: "var(--accent)",
                   }}
-                  className="w-10 h-10 rounded-full bg-surface text-text-muted border border-white/5 flex items-center justify-center transition-colors"
+                  className="w-11 h-11 rounded-xl bg-surface/50 text-text-muted border border-white/10 flex items-center justify-center transition-all duration-300 hover:shadow-glow"
                   href="#"
                 >
                   {icon}

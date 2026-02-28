@@ -6,6 +6,7 @@ import {
   AnimatedCounter,
   FadeIn,
 } from "./MotionWrappers";
+import { motion } from "framer-motion";
 
 export default function StatsSection() {
   const stats = [
@@ -25,15 +26,18 @@ export default function StatsSection() {
         >
           {stats.map((stat) => (
             <StaggerItem key={stat.label}>
-              <div className="text-center group">
-                <div className="text-5xl md:text-7xl font-display font-bold text-transparent bg-clip-text bg-linear-to-b from-accent to-accent-dark dark:to-accent-dark drop-shadow-md group-hover:scale-110 transition-transform duration-500">
+              <motion.div
+                whileHover={{ y: -5, scale: 1.05 }}
+                className="text-center group p-6 rounded-3xl bg-surface/30 border border-white/5 hover:border-accent/20 transition-all duration-500 hover:shadow-glow"
+              >
+                <div className="text-4xl md:text-6xl font-display font-bold text-transparent bg-clip-text bg-linear-to-b from-accent to-accent-dark drop-shadow-md">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="h-1 w-12 mx-auto bg-slate-300 dark:bg-slate-700 rounded-full my-4 group-hover:w-24 group-hover:bg-accent transition-all"></div>
-                <h4 className="text-lg font-semibold text-text-secondary">
+                <div className="h-1 w-8 mx-auto bg-accent/20 rounded-full my-4 group-hover:w-16 group-hover:bg-accent transition-all duration-500"></div>
+                <h4 className="text-xs md:text-sm font-bold uppercase tracking-widest text-text-muted group-hover:text-text-primary transition-colors">
                   {stat.label}
                 </h4>
-              </div>
+              </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>

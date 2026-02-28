@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "./MotionWrappers";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export default function ServicesGrid() {
   const services = [
@@ -72,46 +75,49 @@ export default function ServicesGrid() {
         >
           {services.map((service) => (
             <StaggerItem key={service.title}>
-              <div className="group perspective-1000 h-80">
-                <motion.div
-                  whileHover={{ rotateY: 10, rotateX: 5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full bg-surface-alt rounded-3xl p-8 shadow-lg border border-white/10 overflow-hidden group-hover:shadow-glow transition-shadow duration-500"
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <span className="material-icons-round text-9xl text-accent">
+              <motion.div whileHover={{ y: -10 }} className="h-full group">
+                <Card className="relative h-full bg-surface/50 backdrop-blur-md border-white/10 rounded-3xl overflow-hidden transition-all duration-500 group-hover:shadow-glow group-hover:bg-surface/80">
+                  <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <span className="material-icons-round text-8xl text-accent">
                       {service.icon}
                     </span>
                   </div>
-                  <div className="relative z-10 h-full flex flex-col justify-between">
+
+                  <CardHeader className="relative z-10 p-8 pb-4">
                     <motion.div
-                      whileHover={{ y: -8 }}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
                       className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center shadow-lg mb-6`}
                     >
                       <span className="material-icons-round text-3xl text-white">
                         {service.icon}
                       </span>
                     </motion.div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-text-primary mb-3">
-                        {service.title}
-                      </h3>
-                      <p className="text-text-secondary text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                    <div
-                      className={`mt-4 flex items-center ${service.linkColor} font-bold text-sm`}
+                    <CardTitle className="text-2xl font-bold text-text-primary">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="relative z-10 p-8 pt-0 flex flex-col justify-between h-[calc(100%-144px)]">
+                    <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+
+                    <Button
+                      variant="ghost"
+                      className={`p-0 h-auto hover:bg-transparent justify-start ${service.linkColor} font-bold text-sm group/btn`}
                     >
-                      Learn More{" "}
-                      <span className="material-icons-round text-sm ml-1">
+                      Learn More
+                      <motion.span
+                        className="material-icons-round text-sm ml-2"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                      >
                         arrow_forward
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+                      </motion.span>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </StaggerItem>
           ))}
         </StaggerContainer>

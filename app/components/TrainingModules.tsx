@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "./MotionWrappers";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function TrainingModules() {
   const modules = [
@@ -38,32 +40,47 @@ export default function TrainingModules() {
         </FadeIn>
         <StaggerContainer
           stagger={0.2}
-          className="grid md:grid-cols-3 gap-8 perspective-1000"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {modules.map((mod, i) => (
-            <StaggerItem
-              key={mod.title}
-              className={i === 1 ? "mt-8 md:mt-0" : ""}
-            >
+            <StaggerItem key={mod.title} className={i === 1 ? "md:mt-0" : ""}>
               <motion.div
-                whileHover={{ y: -16, rotateX: 6 }}
+                whileHover={{ y: -12, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="glass-card p-8 rounded-3xl group"
+                className="h-full group"
               >
-                <motion.div
-                  whileHover={{ rotate: 12 }}
-                  className={`w-16 h-16 bg-linear-to-br ${mod.gradient} rounded-2xl shadow-lg mb-6 flex items-center justify-center`}
-                >
-                  <span className="material-symbols-outlined text-white text-3xl">
-                    {mod.icon}
-                  </span>
-                </motion.div>
-                <h3 className="text-2xl font-bold text-text-primary mb-2">
-                  {mod.title}
-                </h3>
-                <p className="text-text-secondary text-sm">
-                  {mod.description}
-                </p>
+                <Card className="h-full glass-card border-none rounded-3xl p-8 relative overflow-hidden bg-surface/40 backdrop-blur-md transition-all duration-500 group-hover:bg-surface/60">
+                  <div
+                    className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${mod.gradient} opacity-5 blur-3xl`}
+                  ></div>
+
+                  <motion.div
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    className={`w-16 h-16 bg-linear-to-br ${mod.gradient} rounded-2xl shadow-lg mb-6 flex items-center justify-center relative z-10`}
+                  >
+                    <span className="material-icons-round text-white text-3xl">
+                      {mod.icon}
+                    </span>
+                  </motion.div>
+
+                  <CardHeader className="p-0 mb-3 relative z-10">
+                    <CardTitle className="text-2xl font-bold text-text-primary">
+                      {mod.title}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent className="p-0 relative z-10">
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {mod.description}
+                    </p>
+                    <div className="mt-6 flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                      Enroll Content{" "}
+                      <span className="material-icons-round text-xs">
+                        arrow_forward
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             </StaggerItem>
           ))}

@@ -1,6 +1,9 @@
 "use client";
 
 import { FadeIn } from "./MotionWrappers";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function SuccessGallery() {
   const items = [
@@ -34,7 +37,7 @@ export default function SuccessGallery() {
     {
       tag: "Event",
       tagColor: "text-orange-500",
-      title: "Tech Summit 2023",
+      title: `Tech Summit ${new Date().getFullYear()}`,
       desc: "Bringing industry leaders together.",
       image:
         "https://lh3.googleusercontent.com/aida-public/AB6AXuCg9m6hGEazcYPrGt296P26q_5gU8qF9z6CL5p0-5sUz_lf15ShnCpW1hnDqT7U0dOjReujapE4eNurakKY4YeSWy3KHt-MyoQbHd87r60WW88nSOVAfdVWkqXoqg9CHc2qRqXIP5aEtKNHD_vdfgLJzHjgruVRvf30v6MRBapq1r0nq-55wYUcrn1IluMgSqBfwwmkuHVHB3ax11lLGw4Jp_fkRsLCJ0rU8xnxTuYjYowDAF1NdaYFq3XO7i7NrGznaIPc3Gxza3gq",
@@ -52,46 +55,51 @@ export default function SuccessGallery() {
   ];
 
   return (
-    <section
-      className="py-24 bg-primary overflow-hidden"
-      id="gallery"
-    >
+    <section className="py-24 bg-primary overflow-hidden" id="gallery">
       <FadeIn className="container mx-auto px-4 mb-12">
         <h2 className="text-4xl font-display font-bold text-text-primary text-center">
           Success Gallery
         </h2>
       </FadeIn>
       <FadeIn>
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-x-auto pb-8 mask-linear-fade no-scrollbar">
           <div
-            className="flex gap-6 animate-float w-[200%]"
+            className="flex gap-6 w-max px-4 md:animate-float"
             style={{ animationDuration: "20s" }}
           >
             {items.map((item) => (
-              <div
+              <motion.div
                 key={item.title}
-                className={`w-80 h-96 shrink-0 glass-card rounded-2xl p-2 transform hover:scale-105 transition-transform duration-300 ${item.extra}`}
+                whileHover={{ y: -10, rotateZ: 1 }}
+                className={`w-72 md:w-80 shrink-0 ${item.extra}`}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  alt={item.title}
-                  className="w-full h-3/5 object-cover rounded-xl mb-4"
-                  src={item.image}
-                />
-                <div className="px-2">
-                  <span
-                    className={`text-xs font-bold ${item.tagColor} uppercase`}
-                  >
-                    {item.tag}
-                  </span>
-                  <h4 className="text-lg font-bold text-text-primary">
-                    {item.title}
-                  </h4>
-                  <p className="text-xs text-text-muted mt-1">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
+                <Card className="h-full glass-card border-none overflow-hidden rounded-2xl p-2 bg-surface/30 backdrop-blur-md">
+                  <div className="relative aspect-video overflow-hidden rounded-xl">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      src={item.image}
+                    />
+                  </div>
+                  <CardHeader className="p-4 pb-2">
+                    <Badge
+                      variant="secondary"
+                      className={`${item.tagColor} bg-accent/10 border-none w-fit text-[10px] tracking-widest uppercase`}
+                    >
+                      {item.tag}
+                    </Badge>
+                    <h4 className="text-lg font-bold text-text-primary mt-2">
+                      {item.title}
+                    </h4>
+                  </CardHeader>
+                  <CardContent className="px-4 pb-6">
+                    <p className="text-xs text-text-muted leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>

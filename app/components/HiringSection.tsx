@@ -6,13 +6,13 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "./MotionWrappers";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function HiringSection() {
   return (
-    <section
-      className="py-24 bg-primary relative overflow-hidden"
-      id="hiring"
-    >
+    <section className="py-24 bg-primary relative overflow-hidden" id="hiring">
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
         {/* Left visual */}
@@ -102,9 +102,15 @@ export default function HiringSection() {
         <SlideIn from="right" className="lg:w-1/2">
           <div className="space-y-6">
             <FadeIn>
-              <span className="text-accent font-semibold tracking-wider uppercase text-sm">
-                Recruitment Revolution
-              </span>
+              <Badge
+                variant="outline"
+                className="px-4 py-1.5 rounded-full border-accent/20 bg-accent/5 backdrop-blur-sm gap-2"
+              >
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                <span className="text-xs font-bold text-accent tracking-widest uppercase">
+                  Recruitment Revolution
+                </span>
+              </Badge>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary">
@@ -119,21 +125,26 @@ export default function HiringSection() {
                 don&apos;t just fill positions; we fulfill potential.
               </p>
             </FadeIn>
-            <StaggerContainer stagger={0.15} delay={0.3}>
+            <StaggerContainer stagger={0.15} delay={0.3} className="space-y-4">
               {[
                 { icon: "psychology", text: "Psychometric Profiling" },
                 { icon: "diversity_3", text: "Cultural Alignment Scoring" },
                 { icon: "trending_up", text: "Long-term Growth Prediction" },
               ].map((item) => (
                 <StaggerItem key={item.text}>
-                  <li className="flex items-center gap-3 py-1">
-                    <span className="material-symbols-outlined text-accent">
-                      {item.icon}
-                    </span>
-                    <span className="text-slate-700 dark:text-slate-200 font-medium">
+                  <motion.div
+                    whileHover={{ x: 10 }}
+                    className="flex items-center gap-4 p-3 rounded-2xl bg-surface/30 border border-white/5 hover:border-accent/30 transition-all group"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-text-inverse transition-all">
+                      <span className="material-symbols-outlined">
+                        {item.icon}
+                      </span>
+                    </div>
+                    <span className="text-text-secondary font-medium group-hover:text-text-primary transition-colors">
                       {item.text}
                     </span>
-                  </li>
+                  </motion.div>
                 </StaggerItem>
               ))}
             </StaggerContainer>

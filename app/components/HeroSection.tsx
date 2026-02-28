@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Magnetic } from "./MotionWrappers";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const containerVariants = {
   hidden: {},
@@ -49,28 +51,39 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-accent/20 backdrop-blur-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-            <span className="text-sm font-semibold text-accent tracking-wide uppercase">
-              The Future of EdTech
-            </span>
+          <motion.div variants={itemVariants}>
+            <Badge
+              variant="outline"
+              className="px-4 py-1.5 rounded-full border-accent/20 bg-surface/50 backdrop-blur-sm gap-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span className="text-xs font-bold text-accent tracking-widest uppercase">
+                The Future of EdTech
+              </span>
+            </Badge>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl lg:text-7xl font-display font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-text-primary via-text-secondary to-text-primary"
+            className="text-5xl lg:text-7xl font-display font-bold leading-tight"
           >
-            Multi-disciplinary <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-text-primary via-text-secondary to-text-primary">
+              Multi-disciplinary
+            </span>
+            <br />
             <motion.span
-              className="text-accent drop-shadow-sm inline-block"
+              className="text-accent drop-shadow-sm inline-block relative"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.8, duration: 0.7 }}
             >
               Research &amp; Excellence
+              <motion.div
+                className="absolute inset-x-0 -bottom-1 h-1 shadow-accent-glow bg-accent"
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ delay: 1.5, duration: 1 }}
+              />
             </motion.span>
           </motion.h1>
 
@@ -83,31 +96,30 @@ export default function HeroSection() {
             cutting-edge smart labs and mentorship.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex gap-4">
-            <motion.button
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-accent text-white rounded-full font-bold shadow-glow hover:bg-accent-dark transition-all flex items-center gap-2 group"
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+            <Button
+              size="lg"
+              className="rounded-full h-14 px-8 bg-accent hover:bg-accent-dark text-text-inverse font-bold shadow-glow group border-none"
             >
               Explore Offerings
               <motion.span
-                className="material-icons-round"
+                className="ml-2 material-icons-round"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
               >
                 arrow_forward
               </motion.span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass-card text-slate-700 dark:text-white rounded-full font-bold hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all flex items-center gap-2"
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full h-14 px-8 glass-card border-white/10 text-text-primary font-bold hover:bg-surface-alt group"
             >
-              <span className="material-icons-round text-accent">
+              <span className="mr-2 material-icons-round text-accent group-hover:scale-120 transition-transform">
                 play_circle
               </span>
               Watch Demo
-            </motion.button>
+            </Button>
           </motion.div>
         </motion.div>
 

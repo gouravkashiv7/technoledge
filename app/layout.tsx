@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import { Outfit, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
@@ -15,6 +14,56 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["300", "400", "600", "700"],
 });
 
+export const metadata: Metadata = {
+  metadataBase: new URL("https://technoledge.in"),
+  title: "Technoledge - Leading Multi-disciplinary Research & Excellence",
+  description:
+    "Technoledge bridges the gap between academic theory and industrial reality through cutting-edge smart labs, IoT sensor arrays, and expert mentorship.",
+  keywords: [
+    "Technoledge",
+    "Research",
+    "Smart Labs",
+    "IoT",
+    "Education",
+    "Excellence",
+    "Infrastructure",
+    "Hiring",
+  ],
+  authors: [{ name: "Technoledge" }],
+  creator: "Technoledge India",
+  publisher: "Technoledge",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://technoledge.in",
+    title: "Technoledge - Multi-disciplinary Research & Excellence",
+    description:
+      "Experience the synergy of innovation and education. We provide turn-key Smart Labs and career fast-tracks.",
+    siteName: "Technoledge India",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Technoledge - Innovation Meets Education",
+    description:
+      "Bridging the gap between academia and industry with state-of-the-art infrastructure.",
+    creator: "@technoledge",
+  },
+  alternates: {
+    canonical: "https://technoledge.in",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,13 +72,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <title>
-          Technoledge - Multi-disciplinary Research &amp; Excellence
-        </title>
-        <meta
-          name="description"
-          content="Experience the synergy of innovation and education. We bridge the gap between academic theory and industrial reality through cutting-edge smart labs and mentorship."
-        />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
           rel="stylesheet"

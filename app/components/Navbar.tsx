@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeSwitcher from "./ThemeSwitcher";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,16 +48,12 @@ export default function Navbar() {
                 {item}
               </motion.a>
             ))}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-full font-medium shadow-lg shadow-accent/30 transition-all"
+            <Button
+              size="lg"
+              className="rounded-full bg-accent hover:bg-accent-dark text-text-inverse font-bold shadow-glow border-none group px-8"
             >
               Get Started
-            </motion.button>
+            </Button>
             <ThemeSwitcher />
           </div>
 
@@ -113,15 +110,12 @@ export default function Navbar() {
                   {item}
                 </motion.a>
               ))}
-              <motion.button
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.35 }}
-                className="w-full py-3 bg-accent text-white font-bold rounded-full shadow-lg shadow-accent/30 mt-4"
-                onClick={() => setMobileOpen(false)}
+              <Button
+                size="lg"
+                className="w-full h-14 bg-accent hover:bg-accent-dark text-text-inverse font-bold rounded-full shadow-glow"
               >
                 Get Started
-              </motion.button>
+              </Button>
             </div>
           </motion.div>
         )}

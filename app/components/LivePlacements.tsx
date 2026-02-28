@@ -1,6 +1,8 @@
 "use client";
 
 import { FadeIn, SlideIn } from "./MotionWrappers";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function LivePlacements() {
   const placements = [
@@ -17,28 +19,30 @@ export default function LivePlacements() {
             <span className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></span>
             Live Placements
           </h3>
-          <p className="text-sm text-text-muted">
-            Real-time hiring updates
-          </p>
+          <p className="text-sm text-text-muted">Real-time hiring updates</p>
         </SlideIn>
-        <FadeIn className="md:w-3/4 h-20 relative overflow-hidden mask-linear-fade">
-          <div className="flex flex-col gap-4 animate-float">
-            {placements.map((p) => (
+        <FadeIn className="md:w-3/4 h-16 relative overflow-hidden mask-linear-fade">
+          <motion.div
+            animate={{ y: [0, -80, -160, 0] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col gap-4"
+          >
+            {[...placements, ...placements].map((p, i) => (
               <div
-                key={p.name}
-                className="flex items-center gap-4 bg-surface/60 p-2 rounded-lg border border-white/10"
+                key={`${p.name}-${i}`}
+                className="flex items-center gap-4 bg-surface/40 backdrop-blur-sm p-3 rounded-xl border border-white/5 mx-2"
               >
-                <span className="font-bold text-accent">{p.salary}</span>
-                <span className="text-text-primary">{p.name}</span>
-                <span className="text-text-muted">
+                <Badge className="bg-accent text-text-inverse border-none font-bold">
+                  {p.salary}
+                </Badge>
+                <span className="text-text-primary font-medium">{p.name}</span>
+                <span className="text-text-muted text-sm hidden sm:inline">
                   placed at
                 </span>
-                <span className="font-bold text-text-primary">
-                  {p.company}
-                </span>
+                <span className="font-bold text-accent">{p.company}</span>
               </div>
             ))}
-          </div>
+          </motion.div>
         </FadeIn>
       </div>
     </section>

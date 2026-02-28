@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FadeIn } from "./MotionWrappers";
+import { Card } from "@/components/ui/card";
 
 export default function InnovationLabs() {
   const labs = [
@@ -53,22 +54,28 @@ export default function InnovationLabs() {
         >
           {/* Duplicate the array for seamless loop */}
           {[...labs, ...labs].map((lab, i) => (
-            <div
+            <motion.div
               key={`${lab.title}-${i}`}
-              className={`w-80 h-96 glass-card p-2 rounded-2xl transform hover:scale-105 transition duration-300 shrink-0 ${lab.extra}`}
+              whileHover={{ y: -10, scale: 1.02 }}
+              className={`w-80 h-96 shrink-0 ${lab.extra}`}
             >
-              <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  alt={lab.title}
-                  className="object-cover w-full h-full"
-                  src={lab.image}
-                />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/80 to-transparent">
-                  <h4 className="text-white font-bold">{lab.title}</h4>
+              <Card className="h-full bg-surface/40 backdrop-blur-md rounded-2xl border-white/10 overflow-hidden relative group p-2">
+                <div className="w-full h-full bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden relative">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    alt={lab.title}
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                    src={lab.image}
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h4 className="text-white font-bold text-xl group-hover:text-accent transition-colors">
+                      {lab.title}
+                    </h4>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Card>
+            </motion.div>
           ))}
         </motion.div>
       </div>

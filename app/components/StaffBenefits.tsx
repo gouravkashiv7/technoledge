@@ -1,6 +1,9 @@
 "use client";
 
 import { SlideIn, FadeIn, ScaleIn } from "./MotionWrappers";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function StaffBenefits() {
   return (
@@ -19,39 +22,51 @@ export default function StaffBenefits() {
         </SlideIn>
         <SlideIn
           from="right"
-          className="relative h-100 flex items-center justify-center"
+          className="relative h-100 flex flex-col items-center justify-center p-6"
         >
-          <ScaleIn>
-            <div className="relative w-40 h-40 transform-style-3d animate-spin-slow">
-              <div
-                className="absolute inset-0 bg-accent-dark/30 backdrop-blur-md transform rotate-45 border border-white/40 shadow-glow"
-                style={{
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                }}
-              ></div>
-              <div
-                className="absolute inset-0 bg-accent-dark/20 backdrop-blur-md transform rotate-45 scale-75 border border-white/40"
-                style={{
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                }}
-              ></div>
-              <div
-                className="absolute inset-0 bg-white/40 transform rotate-45 scale-50 animate-pulse"
-                style={{
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-                }}
-              ></div>
-            </div>
-          </ScaleIn>
-          <FadeIn delay={0.4} className="absolute bottom-10 flex gap-8">
-            <div className="text-center">
-              <h4 className="text-3xl font-bold text-accent-dark">+45%</h4>
-              <p className="text-xs text-slate-500">Avg. Increment</p>
-            </div>
-            <div className="text-center">
-              <h4 className="text-3xl font-bold text-accent-dark">100%</h4>
-              <p className="text-xs text-slate-500">Medical Cover</p>
-            </div>
+          <div className="relative w-full h-full flex items-center justify-center group">
+            <div className="absolute inset-0 bg-accent-dark/5 rounded-full blur-[100px] group-hover:bg-accent-dark/10 transition-colors"></div>
+            <ScaleIn>
+              <div className="relative w-48 h-48 md:w-56 md:h-56 transform-style-3d animate-spin-slow group-hover:scale-110 transition-transform duration-700">
+                <div
+                  className="absolute inset-0 bg-accent-dark/40 backdrop-blur-md transform rotate-45 border border-white/20 shadow-glow"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  }}
+                ></div>
+                <div
+                  className="absolute inset-0 bg-accent-dark/30 backdrop-blur-md transform rotate-45 scale-75 border border-white/30"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  }}
+                ></div>
+                <div
+                  className="absolute inset-0 bg-white/40 transform rotate-45 scale-50 animate-pulse"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
+                  }}
+                ></div>
+              </div>
+            </ScaleIn>
+          </div>
+
+          <FadeIn delay={0.4} className="mt-8 flex gap-8">
+            <Card className="text-center p-6 bg-surface/30 backdrop-blur-md border-white/10 rounded-2xl hover:border-accent-dark/50 transition-colors">
+              <h4 className="text-3xl font-display font-bold text-accent-dark">
+                +45%
+              </h4>
+              <p className="text-xs text-text-muted font-bold tracking-widest uppercase mt-1">
+                Avg. Increment
+              </p>
+            </Card>
+            <Card className="text-center p-6 bg-surface/30 backdrop-blur-md border-white/10 rounded-2xl hover:border-accent-dark/50 transition-colors">
+              <h4 className="text-3xl font-display font-bold text-accent-dark">
+                100%
+              </h4>
+              <p className="text-xs text-text-muted font-bold tracking-widest uppercase mt-1">
+                Medical Cover
+              </p>
+            </Card>
           </FadeIn>
         </SlideIn>
       </div>

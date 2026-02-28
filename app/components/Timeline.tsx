@@ -1,6 +1,9 @@
 "use client";
 
 import { FadeIn, StaggerContainer, StaggerItem } from "./MotionWrappers";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 export default function Timeline() {
   const events = [
@@ -28,64 +31,45 @@ export default function Timeline() {
   ];
 
   return (
-    <section
-      className="py-24 bg-primary relative"
-      id="about"
-    >
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-accent/30 to-transparent -translate-x-1/2"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <FadeIn className="text-center mb-16">
-          <span className="text-accent font-semibold tracking-wider uppercase text-sm">
-            Our Evolution
-          </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mt-2">
-            The Genome of Innovation
-          </h2>
-        </FadeIn>
-        <StaggerContainer stagger={0.3} className="space-y-24 relative">
-          {events.map((event) => (
-            <StaggerItem
-              key={event.year}
-              direction={event.side === "left" ? "right" : "left"}
-            >
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-                {event.side === "left" ? (
-                  <>
-                    <div className="w-full md:w-1/2 text-right md:pr-12 order-2 md:order-1">
-                      <h3 className="text-6xl font-display font-bold text-slate-200 dark:text-slate-700/50 absolute -mt-10 -z-10">
+    <section className="py-24 bg-primary relative" id="about">
+      <div className="relative space-y-12 before:absolute before:inset-y-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-accent before:to-transparent before:-translate-x-1/2">
+        <StaggerContainer stagger={0.3} className="relative">
+          {events.map((event, idx) => (
+            <StaggerItem key={event.year} className="relative">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0">
+                {/* Event Content */}
+                <div
+                  className={`w-full md:w-1/2 ${event.side === "left" ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left order-2 md:order-2"} pl-12 md:pl-0`}
+                >
+                  <motion.div whileHover={{ scale: 1.02 }} className="group">
+                    <Card
+                      className={`relative p-6 bg-surface/40 backdrop-blur-md rounded-2xl border-white/10 hover:border-accent/30 transition-all duration-500 hover:shadow-glow ${event.side === "left" ? "md:border-r-4 md:border-r-accent border-l-4 border-l-accent md:border-l-white/10" : "border-l-4 border-l-accent"}`}
+                    >
+                      <Badge
+                        variant="outline"
+                        className="text-4xl md:text-6xl font-display font-bold text-slate-200 dark:text-slate-800 absolute -top-10 md:static bg-transparent border-none opacity-50 mb-2 p-0 group-hover:text-accent transition-colors"
+                      >
                         {event.year}
-                      </h3>
-                      <div className="glass-card p-6 rounded-2xl inline-block text-left hover:scale-105 transition-transform duration-300 border-l-4 border-l-accent">
-                        <h4 className="text-xl font-bold text-text-primary mb-2">
-                          {event.title}
-                        </h4>
-                        <p className="text-text-secondary">
-                          {event.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-accent border-4 border-white dark:border-slate-900 shadow-[0_0_20px_rgba(0,210,170,0.5)] z-10 hidden md:block"></div>
-                    <div className="w-full md:w-1/2 order-1 md:order-2 md:pl-12 opacity-0 md:opacity-100"></div>
-                  </>
-                ) : (
-                  <>
-                    <div className="w-full md:w-1/2 order-2 md:order-1 opacity-0 md:opacity-100"></div>
-                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-accent shadow-[0_0_20px_rgba(0,210,170,0.5)] z-10 hidden md:block"></div>
-                    <div className="w-full md:w-1/2 order-1 md:order-2 md:pl-12">
-                      <h3 className="text-6xl font-display font-bold text-slate-200 dark:text-slate-700/50 absolute -mt-10 -z-10">
-                        {event.year}
-                      </h3>
-                      <div className="glass-card p-6 rounded-2xl inline-block text-left hover:scale-105 transition-transform duration-300 border-r-4 border-r-accent">
-                        <h4 className="text-xl font-bold text-text-primary mb-2">
-                          {event.title}
-                        </h4>
-                        <p className="text-text-secondary">
-                          {event.description}
-                        </p>
-                      </div>
-                    </div>
-                  </>
-                )}
+                      </Badge>
+                      <h4 className="text-xl font-bold text-text-primary mt-2">
+                        {event.title}
+                      </h4>
+                      <p className="text-text-secondary text-sm leading-relaxed mt-2">
+                        {event.description}
+                      </p>
+                    </Card>
+                  </motion.div>
+                </div>
+
+                {/* Center Dot */}
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface border-4 border-accent shadow-glow z-10 hidden sm:block">
+                  <div className="w-full h-full rounded-full bg-accent animate-pulse opacity-20"></div>
+                </div>
+
+                {/* Spacer for alternating layout */}
+                <div
+                  className={`hidden md:block w-1/2 ${event.side === "left" ? "order-2" : "order-1"}`}
+                ></div>
               </div>
             </StaggerItem>
           ))}

@@ -1,6 +1,8 @@
 "use client";
 
 import { SlideIn, FadeIn } from "./MotionWrappers";
+import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 export default function SmartLab() {
   return (
@@ -59,15 +61,17 @@ export default function SmartLab() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-surface-alt border border-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Card className="p-4 rounded-2xl bg-surface/40 backdrop-blur-md border-white/10 hover:border-accent/30 transition-all group overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-accent opacity-5 blur-xl group-hover:opacity-20 transition-opacity"></div>
                 <h4 className="font-bold text-2xl text-accent">10Gbps</h4>
                 <p className="text-sm text-text-muted">Fiber Backbone</p>
-              </div>
-              <div className="p-4 rounded-xl bg-surface-alt border border-white/10">
+              </Card>
+              <Card className="p-4 rounded-2xl bg-surface/40 backdrop-blur-md border-white/10 hover:border-accent-dark/30 transition-all group overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-accent-dark opacity-5 blur-xl group-hover:opacity-20 transition-opacity"></div>
                 <h4 className="font-bold text-2xl text-accent-dark">Tier 3</h4>
                 <p className="text-sm text-text-muted">Data Center Standard</p>
-              </div>
+              </Card>
             </div>
           </FadeIn>
         </SlideIn>

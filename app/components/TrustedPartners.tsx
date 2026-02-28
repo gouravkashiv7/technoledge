@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "./MotionWrappers";
+import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 export default function TrustedPartners() {
@@ -34,12 +35,15 @@ export default function TrustedPartners() {
             className="flex space-x-12 w-max items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
           >
             {[...partners, ...partners].map((name, i) => (
-              <span
+              <Badge
                 key={`${name}-${i}`}
-                className="text-2xl font-display font-bold text-slate-400 hover:text-accent whitespace-nowrap transition-colors"
+                variant="outline"
+                className="text-lg md:text-xl font-display font-medium text-slate-500 py-3 px-8 rounded-full border-white/5 bg-surface/30 backdrop-blur-sm whitespace-nowrap transition-all duration-500 hover:text-accent hover:border-accent group hover:scale-105"
               >
-                {name}
-              </span>
+                <span className="opacity-60 group-hover:opacity-100 transition-opacity">
+                  {name}
+                </span>
+              </Badge>
             ))}
           </motion.div>
         </div>
