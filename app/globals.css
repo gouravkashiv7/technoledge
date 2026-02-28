@@ -1,26 +1,200 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: "Outfit", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 3s infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-network-pulse: networkPulse 3s infinite;
+  --animate-draw-line: drawLine 2s ease-out forwards;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes networkPulse {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  @keyframes drawLine {
+    0% {
+      height: 0%;
+    }
+    100% {
+      height: 100%;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ========================================
+   LIGHT THEME (default)
+   ======================================== */
+:root {
+  --bg-primary: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f1f5f9;
+  --bg-muted: #f8fafc;
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --accent: #00d2aa;
+  --accent-dark: #00a888;
+  --accent-light: #80ffe6;
+  --accent-glow: rgba(0, 210, 170, 0.3);
+
+  --border-light: rgba(255, 255, 255, 0.5);
+  --border-subtle: rgba(0, 0, 0, 0.05);
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --nav-border: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   DARK THEME
+   ======================================== */
+.dark {
+  --bg-primary: #0f172a;
+  --bg-surface: #1e293b;
+  --bg-surface-alt: #0f172a;
+  --bg-muted: rgba(15, 23, 42, 0.5);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+
+  --accent: #00d2aa;
+  --accent-dark: #00a888;
+  --accent-light: #80ffe6;
+  --accent-glow: rgba(0, 210, 170, 0.3);
+
+  --border-light: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+
+  --nav-bg: rgba(15, 23, 42, 0.7);
+  --nav-border: rgba(51, 65, 85, 0.3);
+}
+
+/* ========================================
+   GLASS & CARD UTILITIES
+   ======================================== */
+.glass-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ========================================
+   3D & TRANSFORM UTILITIES
+   ======================================== */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.rotate-3d-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.rotate-3d-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.02);
+}
+
+/* ========================================
+   SHADOW UTILITIES
+   ======================================== */
+.shadow-glow {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+.shadow-neon {
+  box-shadow:
+    0 0 10px #00d2aa,
+    0 0 20px #00d2aa;
+}
+
+/* ========================================
+   BACKGROUND PATTERNS
+   ======================================== */
+.bg-grid-pattern {
+  background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%2300d2aa" fill-opacity="0.1" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20M40 40V20L20 40"/%3E%3C/g%3E%3C/svg%3E');
+}
+
+/* ========================================
+   MASK & SCROLLBAR
+   ======================================== */
+.mask-linear-fade {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.ticker-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.ticker-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.ticker-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 210, 170, 0.3);
+  border-radius: 4px;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
 }
