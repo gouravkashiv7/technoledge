@@ -92,14 +92,14 @@
    DARK THEME
    ======================================== */
 .dark {
-  --bg-primary: #000000;
-  --bg-surface: #0a0a0a;
-  --bg-surface-alt: #050505;
-  --bg-muted: rgba(20, 20, 20, 0.5);
+  --bg-primary: #09090b;
+  --bg-surface: #18181b;
+  --bg-surface-alt: #27272a;
+  --bg-muted: rgba(39, 39, 42, 0.5);
 
-  --text-primary: #ffffff;
+  --text-primary: #fafafa;
   --text-secondary: #a1a1aa;
-  --text-muted: #525252;
+  --text-muted: #71717a;
   --text-inverse: #000000;
 
   --accent: #00d2aa;
@@ -107,15 +107,15 @@
   --accent-light: #80ffe6;
   --accent-glow: rgba(0, 210, 170, 0.3);
 
-  --border-light: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.12);
   --border-subtle: rgba(255, 255, 255, 0.05);
 
-  --glass-bg: rgba(10, 10, 10, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(24, 24, 27, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 
-  --nav-bg: rgba(0, 0, 0, 0.8);
-  --nav-border: rgba(255, 255, 255, 0.05);
+  --nav-bg: rgba(9, 9, 11, 0.85);
+  --nav-border: rgba(255, 255, 255, 0.08);
 }
 
 /* ========================================

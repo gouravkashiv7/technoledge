@@ -107,19 +107,21 @@ export default function ContactSection() {
                   className="bg-surface/50 border-white/10 focus:ring-accent focus:border-accent transition-all duration-300 min-h-30"
                 />
               </div>
-              <Button
-                size="lg"
-                className="w-full h-14 bg-accent hover:bg-accent-dark text-text-inverse font-bold rounded-xl shadow-glow transition-all duration-300 group"
-              >
-                Send Message
-                <motion.span
-                  className="ml-2 material-icons-round text-sm"
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
+              <motion.div whileTap={{ scale: 0.95 }}>
+                <Button
+                  size="lg"
+                  className="w-full h-14 bg-accent hover:bg-accent-dark text-text-inverse font-bold rounded-xl shadow-glow transition-all duration-300 group"
                 >
-                  send
-                </motion.span>
-              </Button>
+                  Send Message
+                  <motion.span
+                    className="ml-2 material-icons-round text-sm"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                  >
+                    send
+                  </motion.span>
+                </Button>
+              </motion.div>
             </form>
           </Card>
         </SlideIn>

@@ -97,29 +97,33 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-            <Button
-              size="lg"
-              className="rounded-full h-14 px-8 bg-accent hover:bg-accent-dark text-text-inverse font-bold shadow-glow group border-none"
-            >
-              Explore Offerings
-              <motion.span
-                className="ml-2 material-icons-round"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
+            <motion.div whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                className="rounded-full h-14 px-8 bg-accent hover:bg-accent-dark text-text-inverse font-bold shadow-glow group border-none"
               >
-                arrow_forward
-              </motion.span>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full h-14 px-8 glass-card border-white/10 text-text-primary font-bold hover:bg-surface-alt group"
-            >
-              <span className="mr-2 material-icons-round text-accent group-hover:scale-120 transition-transform">
-                play_circle
-              </span>
-              Watch Demo
-            </Button>
+                Explore Offerings
+                <motion.span
+                  className="ml-2 material-icons-round"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                  arrow_forward
+                </motion.span>
+              </Button>
+            </motion.div>
+            <motion.div whileTap={{ scale: 0.95 }}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full h-14 px-8 glass-card border-white/10 text-text-primary font-bold hover:bg-surface-alt group"
+              >
+                <span className="mr-2 material-icons-round text-accent group-hover:scale-120 transition-transform">
+                  play_circle
+                </span>
+                Watch Demo
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 

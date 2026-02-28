@@ -1,11 +1,14 @@
 "use client";
 
+import { useRef } from "react";
 import { FadeIn } from "./MotionWrappers";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
 export default function SuccessGallery() {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
   const items = [
     {
       tag: "Placement",
@@ -62,8 +65,14 @@ export default function SuccessGallery() {
         </h2>
       </FadeIn>
       <FadeIn>
-        <div className="relative w-full overflow-x-auto pb-8 mask-linear-fade no-scrollbar">
-          <div
+        <div
+          ref={carouselRef}
+          className="relative w-full overflow-hidden pb-8 mask-linear-fade cursor-grab active:cursor-grabbing"
+        >
+          <motion.div
+            drag="x"
+            dragConstraints={carouselRef}
+            dragElastic={0.1}
             className="flex gap-6 w-max px-4 md:animate-float"
             style={{ animationDuration: "20s" }}
           >
@@ -71,6 +80,7 @@ export default function SuccessGallery() {
               <motion.div
                 key={item.title}
                 whileHover={{ y: -10, rotateZ: 1 }}
+                whileTap={{ scale: 0.95 }}
                 className={`w-72 md:w-80 shrink-0 ${item.extra}`}
               >
                 <Card className="h-full glass-card border-none overflow-hidden rounded-2xl p-2 bg-surface/30 backdrop-blur-md">
@@ -101,7 +111,7 @@ export default function SuccessGallery() {
                 </Card>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </FadeIn>
     </section>
