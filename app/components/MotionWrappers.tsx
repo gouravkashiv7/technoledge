@@ -30,7 +30,7 @@ export function FadeIn({
   once = true,
 }: FadeInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-100px" });
+  const isInView = useInView(ref, { once, margin: "-80px" });
 
   const directionMap = {
     up: { y: 40, x: 0 },
@@ -78,7 +78,7 @@ export function StaggerContainer({
   className = "",
 }: StaggerContainerProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <motion.div
@@ -151,7 +151,7 @@ interface ScaleInProps {
 
 export function ScaleIn({ children, delay = 0, className = "" }: ScaleInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
     <motion.div
@@ -231,7 +231,7 @@ export function AnimatedCounter({
   className = "",
 }: CounterProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
   const count = useMotionValue(0);
   const rounded = useTransform(count, (v) => `${Math.round(v)}${suffix}`);
 
@@ -267,7 +267,7 @@ export function SlideIn({
   className = "",
 }: SlideInProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <motion.div

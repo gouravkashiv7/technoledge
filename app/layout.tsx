@@ -82,7 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${spaceGrotesk.variable} font-sans transition-colors duration-300`}
+        className={`${outfit.variable} ${spaceGrotesk.variable} font-sans transition-colors duration-300 overflow-x-hidden`}
       >
         {children}
       </body>

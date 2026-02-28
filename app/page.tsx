@@ -23,7 +23,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <>
+    <main className="relative w-full max-w-[100vw] overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <FraudAlert />
@@ -46,6 +46,6 @@ export default function Home() {
       <TrustedPartners />
       <ContactSection />
       <Footer />
-    </>
+    </main>
   );
 }
