@@ -23,29 +23,31 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative w-full max-w-[100vw] overflow-x-hidden">
+    <>
       <Navbar />
-      <HeroSection />
-      <FraudAlert />
-      <HiringSection />
-      <SkillTree />
-      <SmartLab />
-      <TrainingModules />
-      <ProjectOutsourcing />
-      <CareerPath />
-      <StaffBenefits />
-      <LivePlacements />
-      <BridgingGap />
-      <InnovationLabs />
-      <Timeline />
-      <ServicesGrid />
-      <StatsSection />
-      <AudienceCards />
-      <SuccessGallery />
-      <Testimonials />
-      <TrustedPartners />
-      <ContactSection />
-      <Footer />
-    </main>
+      <main className="relative w-full overflow-x-hidden">
+        <HeroSection />
+        <FraudAlert />
+        <HiringSection />
+        <SkillTree />
+        <SmartLab />
+        <TrainingModules />
+        <ProjectOutsourcing />
+        <CareerPath />
+        <StaffBenefits />
+        <LivePlacements />
+        <BridgingGap />
+        <InnovationLabs />
+        <Timeline />
+        <ServicesGrid />
+        <StatsSection />
+        <AudienceCards />
+        <SuccessGallery />
+        <Testimonials />
+        <TrustedPartners />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   );
 }
