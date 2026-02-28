@@ -52,7 +52,7 @@ export default function TrainingModules() {
               >
                 <motion.div
                   whileHover={{ rotate: 12 }}
-                  className={`w-16 h-16 bg-gradient-to-br ${mod.gradient} rounded-2xl shadow-lg mb-6 flex items-center justify-center`}
+                  className={`w-16 h-16 bg-linear-to-br ${mod.gradient} rounded-2xl shadow-lg mb-6 flex items-center justify-center`}
                 >
                   <span className="material-symbols-outlined text-white text-3xl">
                     {mod.icon}

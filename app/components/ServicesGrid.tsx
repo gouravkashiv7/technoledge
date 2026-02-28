@@ -87,7 +87,7 @@ export default function ServicesGrid() {
                   <div className="relative z-10 h-full flex flex-col justify-between">
                     <motion.div
                       whileHover={{ y: -8 }}
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center shadow-lg mb-6`}
+                      className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.gradient} flex items-center justify-center shadow-lg mb-6`}
                     >
                       <span className="material-icons-round text-3xl text-white">
                         {service.icon}

@@ -9,9 +9,9 @@ export default function SmartLab() {
         {/* Server rack visual */}
         <SlideIn
           from="left"
-          className="order-2 lg:order-1 relative h-[600px] perspective-1000 group"
+          className="order-2 lg:order-1 relative h-150 perspective-1000 group"
         >
-          <div className="relative w-80 mx-auto h-full bg-slate-800 rounded-xl border border-slate-700 shadow-2xl transform-style-3d transition-transform duration-700 group-hover:[transform:rotateY(12deg)]">
+          <div className="relative w-80 mx-auto h-full bg-slate-800 rounded-xl border border-slate-700 shadow-2xl transform-style-3d transition-transform duration-700 group-hover:transform-[rotateY(12deg)]">
             <div className="absolute top-4 left-4 right-4 h-2 bg-[#00d2aa]/50 rounded-full shadow-neon animate-pulse"></div>
             <div className="absolute top-10 bottom-10 left-4 right-4 flex flex-col gap-2">
               <div className="h-12 bg-slate-700/50 rounded border border-slate-600 flex items-center px-2 gap-2 hover:bg-slate-600 transition-colors cursor-pointer group/server">
@@ -33,7 +33,7 @@ export default function SmartLab() {
                 <span className="text-[10px] text-slate-400">QUANTUM UNIT</span>
               </div>
             </div>
-            <div className="absolute inset-0 bg-blue-500/10 backdrop-blur-[1px] border border-white/10 rounded-xl transform origin-left transition-transform duration-1000 group-hover:[transform:rotateY(-110deg)]"></div>
+            <div className="absolute inset-0 bg-blue-500/10 backdrop-blur-[1px] border border-white/10 rounded-xl transform origin-left transition-transform duration-1000 group-hover:transform-[rotateY(-110deg)]"></div>
           </div>
         </SlideIn>
 

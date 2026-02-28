@@ -24,7 +24,7 @@ export default function ProjectOutsourcing() {
         </SlideIn>
         <SlideIn
           from="right"
-          className="md:w-1/2 h-[400px] relative perspective-1000 flex items-center justify-center"
+          className="md:w-1/2 h-100 relative perspective-1000 flex items-center justify-center"
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
           <div className="relative w-64 h-64 transform-style-3d rotate-3d-card animate-float">

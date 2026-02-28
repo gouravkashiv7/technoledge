@@ -16,10 +16,10 @@ export default function SkillTree() {
         </FadeIn>
         <StaggerContainer
           stagger={0.25}
-          className="relative h-[600px] w-full max-w-5xl mx-auto"
+          className="relative h-150 w-full max-w-5xl mx-auto"
         >
           {/* Tree trunk */}
-          <div className="absolute left-1/2 bottom-0 w-4 h-1/2 bg-gradient-to-t from-slate-400 to-[#00d2aa]/50 -translate-x-1/2 rounded-full"></div>
+          <div className="absolute left-1/2 bottom-0 w-4 h-1/2 bg-linear-to-t from-slate-400 to-[#00d2aa]/50 -translate-x-1/2 rounded-full"></div>
 
           {/* AI & ML */}
           <StaggerItem

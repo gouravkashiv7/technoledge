@@ -189,6 +189,20 @@
 }
 
 /* ========================================
+   FORCE DARK SECTIONS (always dark bg, light text)
+   ======================================== */
+.dark-section,
+.dark-section * {
+  color: #ffffff !important;
+}
+.dark-section .dark-section-muted {
+  color: #94a3b8 !important;
+}
+.dark-section .dark-section-accent {
+  color: #00d2aa !important;
+}
+
+/* ========================================
    BASE STYLES
    ======================================== */
 @layer base {

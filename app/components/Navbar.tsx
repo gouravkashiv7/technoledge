@@ -20,11 +20,11 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
           <motion.div
-            className="flex-shrink-0 flex items-center gap-2"
+            className="shrink-0 flex items-center gap-2"
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d2aa] to-emerald-600 flex items-center justify-center shadow-glow">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#00d2aa] to-emerald-600 flex items-center justify-center shadow-glow">
               <span className="text-white font-bold text-xl">T</span>
             </div>
             <span className="font-display font-bold text-2xl tracking-tight text-slate-800 dark:text-white">

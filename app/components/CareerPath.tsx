@@ -29,29 +29,18 @@ export default function CareerPath() {
   ];
 
   return (
-    <section
-      className="py-24 relative overflow-hidden"
-      style={{ backgroundColor: "#0f172a", color: "#ffffff" }}
-    >
-      <div
-        className="absolute inset-0"
-        style={{
-          background: "linear-gradient(to bottom, #0f172a, #1e293b, #0f172a)",
-        }}
-      ></div>
+    <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-b from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"></div>
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn className="text-center mb-16">
-          <h2
-            className="text-4xl font-display font-bold"
-            style={{ color: "#ffffff" }}
-          >
+          <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white">
             Sustainable Career Path
           </h2>
-          <p className="mt-2" style={{ color: "#94a3b8" }}>
+          <p className="text-slate-500 dark:text-slate-400 mt-2">
             A journey that grows with you
           </p>
         </FadeIn>
-        <div className="relative max-w-4xl mx-auto h-[600px]">
+        <div className="relative max-w-4xl mx-auto h-150">
           <svg
             className="absolute inset-0 w-full h-full"
             fill="none"
@@ -70,7 +59,7 @@ export default function CareerPath() {
                 y2="100%"
               >
                 <stop offset="0%" stopColor="#00d2aa" />
-                <stop offset="100%" stopColor="#1e293b" />
+                <stop offset="100%" stopColor="#cbd5e1" />
               </linearGradient>
             </defs>
             <path
@@ -82,28 +71,14 @@ export default function CareerPath() {
             {milestones.map((m) => (
               <StaggerItem key={m.num}>
                 <div
-                  className={`absolute -translate-x-1/2 p-3 rounded-full w-12 h-12 flex items-center justify-center ${m.bounce ? "animate-bounce" : ""}`}
-                  style={{
-                    top: m.top,
-                    left: m.left,
-                    backgroundColor: "rgba(30, 41, 59, 0.8)",
-                    border: "2px solid #00d2aa",
-                    boxShadow: "0 0 20px rgba(0, 210, 170, 0.3)",
-                    backdropFilter: "blur(8px)",
-                  }}
+                  className={`absolute -translate-x-1/2 p-3 rounded-full w-12 h-12 flex items-center justify-center border-2 border-[#00d2aa] shadow-glow bg-white dark:bg-slate-800 backdrop-blur-md ${m.bounce ? "animate-bounce" : ""}`}
+                  style={{ top: m.top, left: m.left }}
                 >
-                  <span className="font-bold" style={{ color: "#00d2aa" }}>
-                    {m.num}
-                  </span>
+                  <span className="font-bold text-[#00d2aa]">{m.num}</span>
                 </div>
                 <div
-                  className="absolute p-2 rounded text-xs"
-                  style={{
-                    top: m.top,
-                    left: m.labelLeft,
-                    backgroundColor: "#1e293b",
-                    color: "#ffffff",
-                  }}
+                  className="absolute p-2 rounded text-xs bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-white"
+                  style={{ top: m.top, left: m.labelLeft }}
                 >
                   {m.label}
                 </div>

@@ -11,38 +11,36 @@ export default function BridgingGap() {
             Bridging the Gap
           </h2>
         </FadeIn>
-        <div className="relative h-[400px] w-full flex items-center justify-center">
+        <div className="relative h-100 w-full flex items-center justify-center">
           <SlideIn
             from="left"
             className="absolute left-[10%] top-1/2 -translate-y-1/2 w-48 h-32 bg-slate-200 dark:bg-slate-800 rounded-[50%] shadow-xl flex items-center justify-center z-10 animate-float"
-            style={{ transform: "rotateX(60deg)" }}
           >
-            <div
-              className="-translate-y-8"
-              style={{ transform: "rotateX(-60deg)" }}
-            >
+            <div className="flex flex-col items-center">
               <span className="material-symbols-outlined text-6xl text-slate-500">
                 school
               </span>
-              <h4 className="font-bold mt-2 dark:text-white">Academia</h4>
+              <h4 className="font-bold mt-2 text-slate-800 dark:text-white">
+                Academia
+              </h4>
             </div>
           </SlideIn>
 
-          <ScaleIn className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-4 bg-gradient-to-r from-slate-300 via-[#00d2aa] to-slate-300 dark:from-slate-700 dark:via-[#00d2aa] dark:to-slate-700 rounded-full shadow-glow z-0" />
+          <ScaleIn className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] z-0">
+            <div className="h-4 bg-linear-to-r from-slate-300 via-[#00d2aa] to-slate-300 dark:from-slate-700 dark:via-[#00d2aa] dark:to-slate-700 rounded-full shadow-glow"></div>
+          </ScaleIn>
 
           <SlideIn
             from="right"
             className="absolute right-[10%] top-1/2 -translate-y-1/2 w-48 h-32 bg-slate-200 dark:bg-slate-800 rounded-[50%] shadow-xl flex items-center justify-center z-10 animate-float-delayed"
-            style={{ transform: "rotateX(60deg)" }}
           >
-            <div
-              className="-translate-y-8"
-              style={{ transform: "rotateX(-60deg)" }}
-            >
+            <div className="flex flex-col items-center">
               <span className="material-symbols-outlined text-6xl text-slate-500">
                 apartment
               </span>
-              <h4 className="font-bold mt-2 dark:text-white">Industry</h4>
+              <h4 className="font-bold mt-2 text-slate-800 dark:text-white">
+                Industry
+              </h4>
             </div>
           </SlideIn>
 

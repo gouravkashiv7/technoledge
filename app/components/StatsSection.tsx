@@ -26,7 +26,7 @@ export default function StatsSection() {
           {stats.map((stat) => (
             <StaggerItem key={stat.label}>
               <div className="text-center group">
-                <div className="text-5xl md:text-7xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#00d2aa] to-emerald-700 dark:to-emerald-400 drop-shadow-md group-hover:scale-110 transition-transform duration-500">
+                <div className="text-5xl md:text-7xl font-display font-bold text-transparent bg-clip-text bg-linear-to-b from-[#00d2aa] to-emerald-700 dark:to-emerald-400 drop-shadow-md group-hover:scale-110 transition-transform duration-500">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="h-1 w-12 mx-auto bg-slate-300 dark:bg-slate-700 rounded-full my-4 group-hover:w-24 group-hover:bg-[#00d2aa] transition-all"></div>

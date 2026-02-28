@@ -7,9 +7,9 @@ export default function FraudAlert() {
     <section className="py-12 relative z-20">
       <div className="container mx-auto px-4">
         <ScaleIn>
-          <div className="max-w-4xl mx-auto glass-card rounded-3xl p-1 bg-gradient-to-r from-red-500/20 via-orange-500/20 to-red-500/20">
+          <div className="max-w-4xl mx-auto glass-card rounded-3xl p-1 bg-linear-to-r from-red-500/20 via-orange-500/20 to-red-500/20">
             <div className="bg-white/90 dark:bg-slate-900/90 rounded-[20px] p-6 lg:p-8 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
-              <div className="relative flex-shrink-0 w-24 h-24 flex items-center justify-center">
+              <div className="relative shrink-0 w-24 h-24 flex items-center justify-center">
                 <div className="absolute inset-0 bg-red-500/20 rounded-full blur-xl animate-pulse"></div>
                 <span className="material-icons-round text-6xl text-red-500 relative z-10 drop-shadow-[0_0_10px_rgba(239,68,68,0.5)]">
                   gpp_maybe

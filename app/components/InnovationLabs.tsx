@@ -55,7 +55,7 @@ export default function InnovationLabs() {
           {[...labs, ...labs].map((lab, i) => (
             <div
               key={`${lab.title}-${i}`}
-              className={`w-80 h-96 glass-card p-2 rounded-2xl transform hover:scale-105 transition duration-300 flex-shrink-0 ${lab.extra}`}
+              className={`w-80 h-96 glass-card p-2 rounded-2xl transform hover:scale-105 transition duration-300 shrink-0 ${lab.extra}`}
             >
               <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -64,7 +64,7 @@ export default function InnovationLabs() {
                   className="object-cover w-full h-full"
                   src={lab.image}
                 />
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/80 to-transparent">
                   <h4 className="text-white font-bold">{lab.title}</h4>
                 </div>
               </div>

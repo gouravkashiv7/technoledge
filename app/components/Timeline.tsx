@@ -32,7 +32,7 @@ export default function Timeline() {
       className="py-24 bg-slate-50 dark:bg-slate-900/50 relative"
       id="about"
     >
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#00d2aa]/30 to-transparent -translate-x-1/2"></div>
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-transparent via-[#00d2aa]/30 to-transparent -translate-x-1/2"></div>
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn className="text-center mb-16">
           <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">

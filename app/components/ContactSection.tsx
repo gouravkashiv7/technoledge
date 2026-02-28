@@ -86,7 +86,7 @@ export default function ContactSection() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full py-4 bg-gradient-to-r from-[#00d2aa] to-emerald-600 text-white font-bold rounded-xl shadow-glow"
+                className="w-full py-4 bg-linear-to-r from-[#00d2aa] to-emerald-600 text-white font-bold rounded-xl shadow-glow"
                 type="button"
               >
                 Send Message

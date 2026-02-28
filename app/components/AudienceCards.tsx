@@ -51,7 +51,7 @@ export default function AudienceCards() {
               <motion.div
                 whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(0,0,0,0.1)" }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="bg-gradient-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-700 text-center relative overflow-hidden group"
+                className="bg-linear-to-b from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-700 text-center relative overflow-hidden group"
               >
                 <div
                   className={`absolute top-0 left-0 w-full h-2 ${a.borderColor}`}

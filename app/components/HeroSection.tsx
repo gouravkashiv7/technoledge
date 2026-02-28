@@ -15,7 +15,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] },
+    transition: { duration: 0.7, ease: [0.25, 0.4, 0.25, 1] as const },
   },
 };
 
@@ -31,13 +31,13 @@ export default function HeroSection() {
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#00d2aa]/10 dark:bg-[#00d2aa]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"
+          className="absolute top-0 right-0 w-200 h-200 bg-[#00d2aa]/10 dark:bg-[#00d2aa]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"
         />
         <motion.div
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-400/10 dark:bg-emerald-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"
+          className="absolute bottom-0 left-0 w-150 h-150 bg-emerald-400/10 dark:bg-emerald-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"
         />
       </div>
 
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl lg:text-7xl font-display font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-slate-400"
+            className="text-5xl lg:text-7xl font-display font-bold leading-tight text-transparent bg-clip-text bg-linear-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-200 dark:to-slate-400"
           >
             Multi-disciplinary <br />
             <motion.span
@@ -116,14 +116,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="relative h-[600px] w-full flex items-center justify-center perspective-1000"
+          className="relative h-150 w-full flex items-center justify-center perspective-1000"
         >
           <div
-            className="absolute w-[500px] h-[500px] border border-[#00d2aa]/20 rounded-full animate-spin-slow"
+            className="absolute w-125 h-125 border border-[#00d2aa]/20 rounded-full animate-spin-slow"
             style={{ transform: "rotateX(70deg)" }}
           ></div>
           <div
-            className="absolute w-[400px] h-[400px] border border-[#00d2aa]/40 rounded-full animate-spin-slow"
+            className="absolute w-100 h-100 border border-[#00d2aa]/40 rounded-full animate-spin-slow"
             style={{
               animationDirection: "reverse",
               transform: "rotateX(70deg)",
@@ -131,13 +131,13 @@ export default function HeroSection() {
           ></div>
 
           <Magnetic strength={0.15}>
-            <div className="relative w-80 h-80 rounded-full bg-gradient-to-br from-white/10 to-[#00d2aa]/30 dark:from-white/5 dark:to-[#00d2aa]/20 backdrop-blur-md shadow-2xl border border-white/40 dark:border-white/10 animate-float flex items-center justify-center overflow-hidden z-20">
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50"></div>
+            <div className="relative w-80 h-80 rounded-full bg-linear-to-br from-white/10 to-[#00d2aa]/30 dark:from-white/5 dark:to-[#00d2aa]/20 backdrop-blur-md shadow-2xl border border-white/40 dark:border-white/10 animate-float flex items-center justify-center overflow-hidden z-20">
+              <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/40 to-transparent opacity-50"></div>
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 1, type: "spring", stiffness: 200 }}
-                className="w-40 h-40 rounded-full bg-gradient-to-br from-[#00d2aa] to-emerald-600 shadow-[0_0_60px_rgba(0,210,170,0.6)] flex items-center justify-center"
+                className="w-40 h-40 rounded-full bg-linear-to-br from-[#00d2aa] to-emerald-600 shadow-[0_0_60px_rgba(0,210,170,0.6)] flex items-center justify-center"
               >
                 <span className="material-icons-round text-6xl text-white animate-pulse">
                   science

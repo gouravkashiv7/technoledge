@@ -17,8 +17,8 @@ export default function HiringSection() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
         {/* Left visual */}
         <SlideIn from="left" className="lg:w-1/2 perspective-1000">
-          <div className="relative w-full h-[500px] glass-card rounded-3xl border border-[#00d2aa]/20 overflow-hidden flex items-center justify-center transform-style-3d rotate-3d-card">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00d2aa]/10"></div>
+          <div className="relative w-full h-125 glass-card rounded-3xl border border-[#00d2aa]/20 overflow-hidden flex items-center justify-center transform-style-3d rotate-3d-card">
+            <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#00d2aa]/10"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80">
               <div
                 className="absolute top-0 left-1/2 w-4 h-4 bg-[#00d2aa] rounded-full shadow-neon animate-network-pulse"

@@ -36,7 +36,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 bg-white dark:bg-[#0f172a] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00d2aa]/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-[#00d2aa]/5 to-transparent"></div>
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn>
           <h2 className="text-4xl font-display font-bold text-center text-slate-900 dark:text-white mb-16">

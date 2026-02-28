@@ -70,7 +70,7 @@ export default function SuccessGallery() {
             {items.map((item) => (
               <div
                 key={item.title}
-                className={`w-80 h-96 flex-shrink-0 glass-card rounded-2xl p-2 transform hover:scale-105 transition-transform duration-300 ${item.extra}`}
+                className={`w-80 h-96 shrink-0 glass-card rounded-2xl p-2 transform hover:scale-105 transition-transform duration-300 ${item.extra}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
