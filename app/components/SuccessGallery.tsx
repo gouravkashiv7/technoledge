@@ -1,3 +1,7 @@
+"use client";
+
+import { FadeIn } from "./MotionWrappers";
+
 export default function SuccessGallery() {
   const items = [
     {
@@ -52,44 +56,46 @@ export default function SuccessGallery() {
       className="py-24 bg-slate-50 dark:bg-slate-900/50 overflow-hidden"
       id="gallery"
     >
-      <div className="container mx-auto px-4 mb-12">
+      <FadeIn className="container mx-auto px-4 mb-12">
         <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white text-center">
           Success Gallery
         </h2>
-      </div>
-      <div className="relative w-full overflow-hidden">
-        <div
-          className="flex gap-6 animate-float w-[200%]"
-          style={{ animationDuration: "20s" }}
-        >
-          {items.map((item) => (
-            <div
-              key={item.title}
-              className={`w-80 h-96 flex-shrink-0 glass-card rounded-2xl p-2 transform hover:scale-105 transition-transform duration-300 ${item.extra}`}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                alt={item.title}
-                className="w-full h-3/5 object-cover rounded-xl mb-4"
-                src={item.image}
-              />
-              <div className="px-2">
-                <span
-                  className={`text-xs font-bold ${item.tagColor} uppercase`}
-                >
-                  {item.tag}
-                </span>
-                <h4 className="text-lg font-bold text-slate-800 dark:text-white">
-                  {item.title}
-                </h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  {item.desc}
-                </p>
+      </FadeIn>
+      <FadeIn>
+        <div className="relative w-full overflow-hidden">
+          <div
+            className="flex gap-6 animate-float w-[200%]"
+            style={{ animationDuration: "20s" }}
+          >
+            {items.map((item) => (
+              <div
+                key={item.title}
+                className={`w-80 h-96 flex-shrink-0 glass-card rounded-2xl p-2 transform hover:scale-105 transition-transform duration-300 ${item.extra}`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  alt={item.title}
+                  className="w-full h-3/5 object-cover rounded-xl mb-4"
+                  src={item.image}
+                />
+                <div className="px-2">
+                  <span
+                    className={`text-xs font-bold ${item.tagColor} uppercase`}
+                  >
+                    {item.tag}
+                  </span>
+                  <h4 className="text-lg font-bold text-slate-800 dark:text-white">
+                    {item.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

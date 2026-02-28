@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { FadeIn } from "./MotionWrappers";
+
 export default function InnovationLabs() {
   const labs = [
     {
@@ -28,20 +33,29 @@ export default function InnovationLabs() {
 
   return (
     <section className="py-24 bg-white dark:bg-[#0f172a] overflow-hidden">
-      <div className="container mx-auto px-4 mb-12">
+      <FadeIn className="container mx-auto px-4 mb-12">
         <h2 className="text-4xl font-display font-bold text-center text-slate-900 dark:text-white">
           Innovation Labs Inauguration
         </h2>
-      </div>
-      <div className="relative w-full h-[500px] perspective-1000 flex items-center justify-center overflow-hidden">
-        <div
-          className="flex gap-8 animate-spin-slow w-max"
-          style={{ animationDuration: "20s" }}
+      </FadeIn>
+      <div className="relative w-full overflow-hidden">
+        <motion.div
+          className="flex gap-8 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 25,
+              ease: "linear",
+            },
+          }}
         >
-          {labs.map((lab) => (
+          {/* Duplicate the array for seamless loop */}
+          {[...labs, ...labs].map((lab, i) => (
             <div
-              key={lab.title}
-              className={`w-80 h-96 glass-card p-2 rounded-2xl transform hover:scale-105 transition duration-300 ${lab.extra}`}
+              key={`${lab.title}-${i}`}
+              className={`w-80 h-96 glass-card p-2 rounded-2xl transform hover:scale-105 transition duration-300 flex-shrink-0 ${lab.extra}`}
             >
               <div className="w-full h-full bg-slate-200 rounded-xl overflow-hidden relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -56,7 +70,7 @@ export default function InnovationLabs() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,3 +1,12 @@
+"use client";
+
+import {
+  SlideIn,
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "./MotionWrappers";
+
 export default function HiringSection() {
   return (
     <section
@@ -7,7 +16,7 @@ export default function HiringSection() {
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
         {/* Left visual */}
-        <div className="lg:w-1/2 perspective-1000">
+        <SlideIn from="left" className="lg:w-1/2 perspective-1000">
           <div className="relative w-full h-[500px] glass-card rounded-3xl border border-[#00d2aa]/20 overflow-hidden flex items-center justify-center transform-style-3d rotate-3d-card">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#00d2aa]/10"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80">
@@ -87,49 +96,49 @@ export default function HiringSection() {
               </p>
             </div>
           </div>
-        </div>
+        </SlideIn>
 
         {/* Right content */}
-        <div className="lg:w-1/2 space-y-6">
-          <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">
-            Recruitment Revolution
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white">
-            Soul-Driven Hiring
-          </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-            Beyond resumes and keywords. Our proprietary 3D neural network
-            analyzes soft skills, cognitive aptitude, and long-term potential to
-            connect the right soul to the right role. We don&apos;t just fill
-            positions; we fulfill potential.
-          </p>
-          <ul className="space-y-4">
-            <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#00d2aa]">
-                psychology
+        <SlideIn from="right" className="lg:w-1/2">
+          <div className="space-y-6">
+            <FadeIn>
+              <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">
+                Recruitment Revolution
               </span>
-              <span className="text-slate-700 dark:text-slate-200 font-medium">
-                Psychometric Profiling
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#00d2aa]">
-                diversity_3
-              </span>
-              <span className="text-slate-700 dark:text-slate-200 font-medium">
-                Cultural Alignment Scoring
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#00d2aa]">
-                trending_up
-              </span>
-              <span className="text-slate-700 dark:text-slate-200 font-medium">
-                Long-term Growth Prediction
-              </span>
-            </li>
-          </ul>
-        </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white">
+                Soul-Driven Hiring
+              </h2>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                Beyond resumes and keywords. Our proprietary 3D neural network
+                analyzes soft skills, cognitive aptitude, and long-term
+                potential to connect the right soul to the right role. We
+                don&apos;t just fill positions; we fulfill potential.
+              </p>
+            </FadeIn>
+            <StaggerContainer stagger={0.15} delay={0.3}>
+              {[
+                { icon: "psychology", text: "Psychometric Profiling" },
+                { icon: "diversity_3", text: "Cultural Alignment Scoring" },
+                { icon: "trending_up", text: "Long-term Growth Prediction" },
+              ].map((item) => (
+                <StaggerItem key={item.text}>
+                  <li className="flex items-center gap-3 py-1">
+                    <span className="material-symbols-outlined text-[#00d2aa]">
+                      {item.icon}
+                    </span>
+                    <span className="text-slate-700 dark:text-slate-200 font-medium">
+                      {item.text}
+                    </span>
+                  </li>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </SlideIn>
       </div>
     </section>
   );
