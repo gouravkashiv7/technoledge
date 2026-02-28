@@ -6,11 +6,11 @@ import { FadeIn } from "./MotionWrappers";
 export default function Footer() {
   return (
     <FadeIn>
-      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+      <footer className="bg-surface-alt text-text-muted py-12 border-t border-slate-200 dark:border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <span className="font-display font-bold text-2xl text-white">
+              <span className="font-display font-bold text-2xl text-text-primary">
                 Technoledge
               </span>
               <p className="text-sm mt-2">
@@ -21,8 +21,8 @@ export default function Footer() {
               {["Privacy Policy", "Terms of Service", "Support"].map((link) => (
                 <motion.a
                   key={link}
-                  whileHover={{ color: "#00d2aa", y: -2 }}
-                  className="transition"
+                  whileHover={{ y: -2 }}
+                  className="transition hover:text-accent"
                   href="#"
                 >
                   {link}
@@ -60,10 +60,10 @@ export default function Footer() {
                   key={i}
                   whileHover={{
                     scale: 1.15,
-                    backgroundColor: "#00d2aa",
+                    backgroundColor: "var(--accent)",
                     color: "#ffffff",
                   }}
-                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center transition"
+                  className="w-10 h-10 rounded-full bg-surface text-text-muted border border-white/5 flex items-center justify-center transition-colors"
                   href="#"
                 >
                   {icon}

@@ -14,7 +14,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-      className="fixed w-full z-50 top-0 glass-panel bg-white/70 dark:bg-slate-900/70 border-b border-white/20 dark:border-slate-700/30"
+      className="fixed w-full z-50 top-0 glass-panel bg-white/70 dark:bg-surface-alt/70 border-b border-white/20 dark:border-slate-700/30"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
@@ -24,10 +24,10 @@ export default function Navbar() {
             whileHover={{ scale: 1.03 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#00d2aa] to-emerald-600 flex items-center justify-center shadow-glow">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-accent to-accent-dark flex items-center justify-center shadow-glow">
               <span className="text-white font-bold text-xl">T</span>
             </div>
-            <span className="font-display font-bold text-2xl tracking-tight text-slate-800 dark:text-white">
+            <span className="font-display font-bold text-2xl tracking-tight text-text-primary">
               Technoledge
             </span>
           </motion.div>
@@ -40,7 +40,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                whileHover={{ y: -2, color: "#00d2aa" }}
+                whileHover={{ y: -2, color: "var(--accent)" }}
                 className="text-slate-600 dark:text-slate-300 font-medium transition"
                 href={`#${item.toLowerCase()}`}
               >
@@ -53,7 +53,7 @@ export default function Navbar() {
               transition={{ delay: 0.7 }}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#00d2aa] hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full font-medium shadow-lg shadow-[#00d2aa]/30 transition-all"
+              className="bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-full font-medium shadow-lg shadow-accent/30 transition-all"
             >
               Get Started
             </motion.button>
@@ -65,7 +65,7 @@ export default function Navbar() {
             <ThemeSwitcher />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 transition-colors"
+              className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-surface-alt transition-colors"
               aria-label="Toggle menu"
             >
               <motion.span
@@ -97,7 +97,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="md:hidden overflow-hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-700"
+            className="md:hidden overflow-hidden bg-white/95 dark:bg-surface-alt/95 backdrop-blur-xl border-t border-white/10"
           >
             <div className="px-6 py-6 space-y-4">
               {navLinks.map((item, i) => (
@@ -106,7 +106,7 @@ export default function Navbar() {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.08 }}
-                  className="block text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-[#00d2aa] transition-colors py-2 border-b border-slate-100 dark:border-slate-800"
+                  className="block text-lg font-medium text-slate-700 dark:text-slate-200 hover:text-accent transition-colors py-2 border-b border-slate-100 dark:border-white/10"
                   href={`#${item.toLowerCase()}`}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -117,7 +117,7 @@ export default function Navbar() {
                 initial={{ y: 10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.35 }}
-                className="w-full py-3 bg-[#00d2aa] text-white font-bold rounded-full shadow-lg shadow-[#00d2aa]/30 mt-4"
+                className="w-full py-3 bg-accent text-white font-bold rounded-full shadow-lg shadow-accent/30 mt-4"
                 onClick={() => setMobileOpen(false)}
               >
                 Get Started

@@ -1,6 +1,7 @@
 "use client";
 
 import { FadeIn } from "./MotionWrappers";
+import { motion } from "framer-motion";
 
 export default function TrustedPartners() {
   const partners = [
@@ -19,27 +20,28 @@ export default function TrustedPartners() {
   ];
 
   return (
-    <section className="py-16 bg-slate-100 dark:bg-slate-900">
+    <section className="py-16 bg-surface-alt">
       <FadeIn className="container mx-auto px-4 mb-8 text-center">
-        <p className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+        <p className="text-sm font-bold text-text-muted uppercase tracking-widest">
           Trusted By Leaders
         </p>
       </FadeIn>
       <FadeIn>
         <div className="relative w-full overflow-hidden mask-linear-fade">
-          <div
-            className="flex space-x-12 animate-spin-slow w-max items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
-            style={{ animationDuration: "20s" }}
+          <motion.div
+            animate={{ x: [0, -1000] }}
+            transition={{ ease: "linear", duration: 30, repeat: Infinity }}
+            className="flex space-x-12 w-max items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500"
           >
-            {partners.map((name, i) => (
+            {[...partners, ...partners].map((name, i) => (
               <span
                 key={`${name}-${i}`}
-                className="text-2xl font-display font-bold text-slate-400 hover:text-slate-800 dark:hover:text-white whitespace-nowrap transition-colors"
+                className="text-2xl font-display font-bold text-slate-400 hover:text-accent whitespace-nowrap transition-colors"
               >
                 {name}
               </span>
             ))}
-          </div>
+          </motion.div>
         </div>
       </FadeIn>
     </section>

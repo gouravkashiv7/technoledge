@@ -32,9 +32,9 @@ export default function InnovationLabs() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0f172a] overflow-hidden">
+    <section className="py-24 bg-primary overflow-hidden">
       <FadeIn className="container mx-auto px-4 mb-12">
-        <h2 className="text-4xl font-display font-bold text-center text-slate-900 dark:text-white">
+        <h2 className="text-4xl font-display font-bold text-center text-text-primary">
           Innovation Labs Inauguration
         </h2>
       </FadeIn>

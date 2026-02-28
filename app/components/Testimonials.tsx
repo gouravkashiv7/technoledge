@@ -35,11 +35,11 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0f172a] relative overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-r from-[#00d2aa]/5 to-transparent"></div>
+    <section className="py-24 bg-primary relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-r from-accent/5 to-transparent"></div>
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn>
-          <h2 className="text-4xl font-display font-bold text-center text-slate-900 dark:text-white mb-16">
+          <h2 className="text-4xl font-display font-bold text-center text-text-primary mb-16">
             Voices of Trust
           </h2>
         </FadeIn>
@@ -58,21 +58,21 @@ export default function Testimonials() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     alt={t.name}
-                    className="w-16 h-16 rounded-full border-4 border-white dark:border-slate-800 object-cover shadow-lg"
+                    className="w-16 h-16 rounded-full border-4 border-white dark:border-white/10 object-cover shadow-lg"
                     src={t.image}
                   />
                 </div>
                 <div className="mt-8">
-                  <span className="text-4xl text-[#00d2aa]/30 font-serif leading-none absolute top-4 right-4">
+                  <span className="text-4xl text-accent/30 font-serif leading-none absolute top-4 right-4">
                     &ldquo;
                   </span>
                   <p className="text-slate-600 dark:text-slate-300 italic mb-4">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <h5 className="font-bold text-slate-900 dark:text-white">
+                  <h5 className="font-bold text-text-primary">
                     {t.name}
                   </h5>
-                  <p className="text-xs text-[#00d2aa] font-semibold">
+                  <p className="text-xs text-accent font-semibold">
                     {t.role}
                   </p>
                 </div>

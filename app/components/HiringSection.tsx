@@ -10,18 +10,18 @@ import {
 export default function HiringSection() {
   return (
     <section
-      className="py-24 bg-white dark:bg-[#0f172a] relative overflow-hidden"
+      className="py-24 bg-primary relative overflow-hidden"
       id="hiring"
     >
       <div className="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
         {/* Left visual */}
         <SlideIn from="left" className="lg:w-1/2 perspective-1000">
-          <div className="relative w-full h-125 glass-card rounded-3xl border border-[#00d2aa]/20 overflow-hidden flex items-center justify-center transform-style-3d rotate-3d-card">
-            <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#00d2aa]/10"></div>
+          <div className="relative w-full h-72 md:h-125 glass-card rounded-3xl border border-accent/20 overflow-hidden flex items-center justify-center transform-style-3d rotate-3d-card">
+            <div className="absolute inset-0 bg-linear-to-b from-transparent to-accent/10"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80">
               <div
-                className="absolute top-0 left-1/2 w-4 h-4 bg-[#00d2aa] rounded-full shadow-neon animate-network-pulse"
+                className="absolute top-0 left-1/2 w-4 h-4 bg-accent rounded-full shadow-neon animate-network-pulse"
                 style={{ animationDelay: "0s" }}
               ></div>
               <div
@@ -33,15 +33,15 @@ export default function HiringSection() {
                 style={{ animationDelay: "1s" }}
               ></div>
               <div
-                className="absolute bottom-1/3 left-20 w-3 h-3 bg-emerald-400 rounded-full shadow-neon animate-network-pulse"
+                className="absolute bottom-1/3 left-20 w-3 h-3 bg-accent-dark rounded-full shadow-neon animate-network-pulse"
                 style={{ animationDelay: "1.5s" }}
               ></div>
               <div
-                className="absolute bottom-0 left-1/2 w-5 h-5 bg-[#00d2aa] rounded-full shadow-neon animate-network-pulse"
+                className="absolute bottom-0 left-1/2 w-5 h-5 bg-accent rounded-full shadow-neon animate-network-pulse"
                 style={{ animationDelay: "2s" }}
               ></div>
               <svg
-                className="absolute inset-0 w-full h-full pointer-events-none stroke-[#00d2aa]/40"
+                className="absolute inset-0 w-full h-full pointer-events-none stroke-accent/40"
                 style={{ filter: "drop-shadow(0 0 2px rgba(0,210,170,0.5))" }}
               >
                 <line
@@ -87,7 +87,7 @@ export default function HiringSection() {
               </svg>
             </div>
             <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl text-center">
-              <span className="text-xs font-bold text-[#00d2aa] uppercase tracking-wider">
+              <span className="text-xs font-bold text-accent uppercase tracking-wider">
                 AI-Powered Matching
               </span>
               <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">
@@ -102,17 +102,17 @@ export default function HiringSection() {
         <SlideIn from="right" className="lg:w-1/2">
           <div className="space-y-6">
             <FadeIn>
-              <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">
+              <span className="text-accent font-semibold tracking-wider uppercase text-sm">
                 Recruitment Revolution
               </span>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white">
+              <h2 className="text-4xl lg:text-5xl font-display font-bold text-text-primary">
                 Soul-Driven Hiring
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="text-lg text-text-secondary leading-relaxed">
                 Beyond resumes and keywords. Our proprietary 3D neural network
                 analyzes soft skills, cognitive aptitude, and long-term
                 potential to connect the right soul to the right role. We
@@ -127,7 +127,7 @@ export default function HiringSection() {
               ].map((item) => (
                 <StaggerItem key={item.text}>
                   <li className="flex items-center gap-3 py-1">
-                    <span className="material-symbols-outlined text-[#00d2aa]">
+                    <span className="material-symbols-outlined text-accent">
                       {item.icon}
                     </span>
                     <span className="text-slate-700 dark:text-slate-200 font-medium">

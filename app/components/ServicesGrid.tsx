@@ -10,8 +10,8 @@ export default function ServicesGrid() {
       title: "Centre of Excellence",
       description:
         "State-of-the-art labs equipped with industry-standard hardware and software.",
-      gradient: "from-[#00d2aa] to-emerald-600",
-      linkColor: "text-[#00d2aa]",
+      gradient: "from-accent to-accent-dark",
+      linkColor: "text-accent",
     },
     {
       icon: "school",
@@ -56,13 +56,13 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0f172a]" id="services">
+    <section className="py-24 bg-primary" id="services">
       <div className="container mx-auto px-4">
         <FadeIn className="text-center mb-16">
-          <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-accent font-semibold tracking-wider uppercase text-sm">
             Core Ecosystem
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mt-2">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-text-primary mt-2">
             Integrated Solutions
           </h2>
         </FadeIn>
@@ -76,11 +76,11 @@ export default function ServicesGrid() {
                 <motion.div
                   whileHover={{ rotateY: 10, rotateX: 5, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="relative w-full h-full bg-slate-50 dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-slate-100 dark:border-slate-700 overflow-hidden group-hover:shadow-glow transition-shadow duration-500"
+                  className="relative w-full h-full bg-surface-alt rounded-3xl p-8 shadow-lg border border-white/10 overflow-hidden group-hover:shadow-glow transition-shadow duration-500"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <span className="material-icons-round text-9xl text-[#00d2aa]">
+                    <span className="material-icons-round text-9xl text-accent">
                       {service.icon}
                     </span>
                   </div>
@@ -94,10 +94,10 @@ export default function ServicesGrid() {
                       </span>
                     </motion.div>
                     <div>
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
+                      <h3 className="text-2xl font-bold text-text-primary mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      <p className="text-text-secondary text-sm">
                         {service.description}
                       </p>
                     </div>

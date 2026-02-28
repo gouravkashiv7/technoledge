@@ -27,12 +27,12 @@ export default function TrainingModules() {
 
   return (
     <section
-      className="py-24 bg-slate-50 dark:bg-slate-900/50 relative overflow-hidden"
+      className="py-24 bg-primary relative overflow-hidden"
       id="training"
     >
       <div className="container mx-auto px-4">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white">
+          <h2 className="text-4xl font-display font-bold text-text-primary">
             Corporate Training Modules
           </h2>
         </FadeIn>
@@ -58,10 +58,10 @@ export default function TrainingModules() {
                     {mod.icon}
                   </span>
                 </motion.div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-text-primary mb-2">
                   {mod.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm">
+                <p className="text-text-secondary text-sm">
                   {mod.description}
                 </p>
               </motion.div>

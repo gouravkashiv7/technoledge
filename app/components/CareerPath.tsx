@@ -29,16 +29,14 @@ export default function CareerPath() {
   ];
 
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-slate-100 via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"></div>
+    <section className="py-24 bg-primary relative overflow-hidden">
+      <div className="absolute inset-0 bg-linear-to-b from-primary via-surface-alt to-primary opacity-50"></div>
       <div className="container mx-auto px-4 relative z-10">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white">
+          <h2 className="text-4xl font-display font-bold text-text-primary">
             Sustainable Career Path
           </h2>
-          <p className="text-slate-500 dark:text-slate-400 mt-2">
-            A journey that grows with you
-          </p>
+          <p className="text-text-muted mt-2">A journey that grows with you</p>
         </FadeIn>
         <div className="relative max-w-4xl mx-auto h-150">
           <svg
@@ -58,7 +56,7 @@ export default function CareerPath() {
                 x2="0%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#00d2aa" />
+                <stop offset="0%" stopColor="var(--accent)" />
                 <stop offset="100%" stopColor="#cbd5e1" />
               </linearGradient>
             </defs>
@@ -71,13 +69,13 @@ export default function CareerPath() {
             {milestones.map((m) => (
               <StaggerItem key={m.num}>
                 <div
-                  className={`absolute -translate-x-1/2 p-3 rounded-full w-12 h-12 flex items-center justify-center border-2 border-[#00d2aa] shadow-glow bg-white dark:bg-slate-800 backdrop-blur-md ${m.bounce ? "animate-bounce" : ""}`}
+                  className={`absolute -translate-x-1/2 p-3 rounded-full w-12 h-12 flex items-center justify-center border-2 border-accent shadow-glow glass-panel ${m.bounce ? "animate-bounce" : ""}`}
                   style={{ top: m.top, left: m.left }}
                 >
-                  <span className="font-bold text-[#00d2aa]">{m.num}</span>
+                  <span className="font-bold text-accent">{m.num}</span>
                 </div>
                 <div
-                  className="absolute p-2 rounded text-xs bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-white"
+                  className="absolute p-2 rounded text-xs glass-card text-text-primary font-medium"
                   style={{ top: m.top, left: m.labelLeft }}
                 >
                   {m.label}

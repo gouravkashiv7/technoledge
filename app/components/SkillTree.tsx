@@ -4,34 +4,34 @@ import { FadeIn, StaggerContainer, StaggerItem } from "./MotionWrappers";
 
 export default function SkillTree() {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900/50 overflow-hidden">
+    <section className="py-24 bg-primary overflow-hidden">
       <div className="container mx-auto px-4">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white">
+          <h2 className="text-4xl font-display font-bold text-text-primary">
             Your Skill Tree
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mt-2">
+          <p className="text-text-secondary mt-2">
             Interactive growth paths for tomorrow&apos;s technology
           </p>
         </FadeIn>
         <StaggerContainer
           stagger={0.25}
-          className="relative h-150 w-full max-w-5xl mx-auto"
+          className="relative h-80 md:h-150 w-full max-w-5xl mx-auto"
         >
           {/* Tree trunk */}
-          <div className="absolute left-1/2 bottom-0 w-4 h-1/2 bg-linear-to-t from-slate-400 to-[#00d2aa]/50 -translate-x-1/2 rounded-full"></div>
+          <div className="absolute left-1/2 bottom-0 w-4 h-1/2 bg-linear-to-t from-slate-400 to-accent/50 -translate-x-1/2 rounded-full"></div>
 
           {/* AI & ML */}
           <StaggerItem
             direction="right"
             className="absolute bottom-1/3 left-1/2 w-64 h-64 -translate-x-full -translate-y-12 group cursor-pointer"
           >
-            <div className="relative w-full h-full border-b-2 border-l-2 border-[#00d2aa]/30 rounded-bl-[100px] transition-all duration-500 group-hover:border-[#00d2aa] group-hover:shadow-[0_0_15px_rgba(0,210,170,0.3)_inset]">
+            <div className="relative w-full h-full border-b-2 border-l-2 border-accent/30 rounded-bl-[100px] transition-all duration-500 group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(0,210,170,0.3)_inset]">
               <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 glass-card p-4 rounded-xl group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-3xl text-[#00d2aa]">
+                <span className="material-symbols-outlined text-3xl text-accent">
                   smart_toy
                 </span>
-                <h4 className="font-bold text-slate-800 dark:text-white mt-2">
+                <h4 className="font-bold text-text-primary mt-2">
                   AI &amp; ML
                 </h4>
               </div>
@@ -48,7 +48,7 @@ export default function SkillTree() {
                 <span className="material-symbols-outlined text-3xl text-blue-400">
                   cloud_queue
                 </span>
-                <h4 className="font-bold text-slate-800 dark:text-white mt-2">
+                <h4 className="font-bold text-text-primary mt-2">
                   Cloud Computing
                 </h4>
               </div>
@@ -65,7 +65,7 @@ export default function SkillTree() {
                 <span className="material-symbols-outlined text-3xl text-purple-400">
                   precision_manufacturing
                 </span>
-                <h4 className="font-bold text-slate-800 dark:text-white mt-2">
+                <h4 className="font-bold text-text-primary mt-2">
                   Robotics
                 </h4>
               </div>

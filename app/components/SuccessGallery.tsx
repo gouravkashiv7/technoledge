@@ -6,7 +6,7 @@ export default function SuccessGallery() {
   const items = [
     {
       tag: "Placement",
-      tagColor: "text-[#00d2aa]",
+      tagColor: "text-accent",
       title: "Adobe Hiring Drive",
       desc: "20 students placed with 15LPA package.",
       image:
@@ -53,11 +53,11 @@ export default function SuccessGallery() {
 
   return (
     <section
-      className="py-24 bg-slate-50 dark:bg-slate-900/50 overflow-hidden"
+      className="py-24 bg-primary overflow-hidden"
       id="gallery"
     >
       <FadeIn className="container mx-auto px-4 mb-12">
-        <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white text-center">
+        <h2 className="text-4xl font-display font-bold text-text-primary text-center">
           Success Gallery
         </h2>
       </FadeIn>
@@ -84,10 +84,10 @@ export default function SuccessGallery() {
                   >
                     {item.tag}
                   </span>
-                  <h4 className="text-lg font-bold text-slate-800 dark:text-white">
+                  <h4 className="text-lg font-bold text-text-primary">
                     {item.title}
                   </h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  <p className="text-xs text-text-muted mt-1">
                     {item.desc}
                   </p>
                 </div>

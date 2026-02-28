@@ -40,7 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${spaceGrotesk.variable} font-sans bg-[#f8fafc] dark:bg-[#0f172a] text-slate-800 dark:text-slate-100 transition-colors duration-300`}
+        className={`${outfit.variable} ${spaceGrotesk.variable} font-sans transition-colors duration-300`}
       >
         {children}
       </body>

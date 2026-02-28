@@ -5,18 +5,18 @@ import { SlideIn, FadeIn } from "./MotionWrappers";
 export default function ProjectOutsourcing() {
   return (
     <section
-      className="py-24 bg-white dark:bg-[#0f172a] relative overflow-hidden"
+      className="py-24 bg-primary relative overflow-hidden"
       id="outsourcing"
     >
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
         <SlideIn from="left" className="md:w-1/2">
-          <span className="text-[#00d2aa] font-semibold tracking-wider uppercase text-sm">
+          <span className="text-accent font-semibold tracking-wider uppercase text-sm">
             Global Delivery
           </span>
-          <h2 className="text-4xl font-display font-bold text-slate-900 dark:text-white mt-2">
+          <h2 className="text-4xl font-display font-bold text-text-primary mt-2">
             Project Outsourcing
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-400 mt-6">
+          <p className="text-lg text-text-secondary mt-6">
             Our self-assembling teams adapt to your architectural needs. We
             visualize your project blueprint and deploy the exact expertise
             required to build it, from microservices to monoliths.
@@ -24,7 +24,7 @@ export default function ProjectOutsourcing() {
         </SlideIn>
         <SlideIn
           from="right"
-          className="md:w-1/2 h-100 relative perspective-1000 flex items-center justify-center"
+          className="md:w-1/2 h-64 md:h-100 relative perspective-1000 flex items-center justify-center"
         >
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10"></div>
           <div className="relative w-64 h-64 transform-style-3d rotate-3d-card animate-float">
