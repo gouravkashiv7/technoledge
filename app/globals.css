@@ -72,10 +72,10 @@
   --text-muted: #64748b;
   --text-inverse: #ffffff;
 
-  --accent: #4f46e5;
-  --accent-dark: #3730a3;
-  --accent-light: #818cf8;
-  --accent-glow: rgba(79, 70, 229, 0.15);
+  --accent: #00d2aa;
+  --accent-dark: #00a888;
+  --accent-light: #80ffe6;
+  --accent-glow: rgba(0, 210, 170, 0.2);
 
   --border-light: rgba(0, 0, 0, 0.05);
   --border-subtle: rgba(0, 0, 0, 0.02);

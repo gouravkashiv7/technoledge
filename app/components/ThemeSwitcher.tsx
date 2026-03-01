@@ -10,7 +10,7 @@ const THEMES = [
     label: "Light",
     icon: "light_mode",
     swatch: "#f8fafc",
-    accent: "#4f46e5",
+    accent: "#00d2aa",
     isDark: false,
   },
   {
